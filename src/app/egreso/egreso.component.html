@@ -1,0 +1,17 @@
+<div class="egreso">
+  <h2 class="egreso_titulo">Egresos</h2>
+
+    <div *ngFor="let row of dtEgreso">
+      <div class="elemento limpiarEstilos" >
+          <div class="elemento_descripcion">{{row.descripcion}}</div>
+          <div class="right limpiarEstilos">
+              <div class="elemento_valor">- {{row.valor | currency:'MNX':'$':'1.2-2'}}</div>
+              <div class="elemento_porcentaje">{{funProcentajeEgreso(row.valor) | number: '1.0-0'}}%</div>
+              <div class="elemento_eliminar">
+                  <button class="elemento_eliminar--btn" (click)="funEliminarRegistro(row)" ><i class="ion-ios-close-outline"></i></button>
+              </div>
+          </div>
+      </div>
+    </div>
+
+</div>
