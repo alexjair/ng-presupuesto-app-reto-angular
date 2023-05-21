@@ -27,7 +27,7 @@ export class EgresoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.dtEgreso = this.egresoService.dataIngreaso;
+    this.dtEgreso = this.egresoService.dataEgreso;
   }
 
 

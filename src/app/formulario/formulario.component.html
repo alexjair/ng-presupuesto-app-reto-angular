@@ -1,13 +1,39 @@
-<form>
+<form
+  [formGroup]="frmPresupuesto"
+>
   <div class="agregar">
-      <div class="agregar_contenedor">
-          <select class="agregar_tipo">
-              <option value="ing" selected>(+) Ingreso</option>
-              <option value="egr">(-) Egreso</option>
-          </select>
-          <input type="text" class="agregar_descripcion" placeholder="Agregar Descripción">
-          <input type="number" class="agregar_valor" placeholder="Valor">
-          <button class="agregar_btn"><i class="ion-ios-checkmark-outline" (click)="funRegistrarValor()"></i></button>
-      </div>
+    <div class="agregar_contenedor">
+      <select
+        [ngClass]="{redfocus: vTipoValor == 'vTipoEngreso'}"
+        class="agregar_tipo" (change)="funTipoOperation($event)"
+      >
+        <option value="vTipoIngreso" selected>(+) Ingreso</option>
+        <option value="vTipoEngreso">(-) Egreso</option>
+      </select>
+      <input
+        [ngClass]="{redfocus: vTipoValor == 'vTipoEngreso'}"
+        type="text"
+        class="agregar_descripcion"
+        placeholder="Agregar Descripción"
+        [(ngModel)]="txtDescripcion"
+        name="txtDescripcion"
+        formControlName="txtDescripcion"
+      />
+      <input
+        [ngClass]="{redfocus: vTipoValor == 'vTipoEngreso'}"
+        type="number"
+        class="agregar_valor"
+        placeholder="Valor"
+        [(ngModel)]="txtValor"
+        name="txtValor"
+        formControlName="txtValor"
+      />
+      <button class="agregar_btn" type="submit"  (click)="funRegistrarValor()">
+        <i
+          [ngClass]="{red: vTipoValor == 'vTipoEngreso'}"
+          class="ion-ios-checkmark-outline"
+        ></i>
+      </button>
+    </div>
   </div>
 </form>

@@ -15,7 +15,7 @@ export class AppComponent {
     private egresoService:EgresoService,
   ){
     this.dataIngreso = ingresoService.dataIngreaso;
-    this.dataEgreso = egresoService.dataIngreaso;
+    this.dataEgreso = egresoService.dataEgreso;
   }
 
   title = 'ng-presupuesto-app-reto';

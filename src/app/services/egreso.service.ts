@@ -8,7 +8,7 @@ export class EgresoService {
 
   constructor() { }
 
-  dataIngreaso: Egreso[] = [
+  dataEgreso: Egreso[] = [
     {
       descripcion: "Renta Depto",
       valor: 900,
@@ -19,8 +19,8 @@ export class EgresoService {
   ]
 
   funEliminar(row: Egreso){
-    const indice: number = this.dataIngreaso.indexOf(row);
-    this.dataIngreaso.splice(indice,1);
+    const indice: number = this.dataEgreso.indexOf(row);
+    this.dataEgreso.splice(indice,1);
   }
 
 }
